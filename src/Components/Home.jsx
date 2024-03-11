@@ -5,6 +5,8 @@ import MoneyIcon from "../assets/MoneyIcon.png";
 import NavItem from "./NavItem";
 
 
+// ... (importações)
+
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const toggleNav = () => setIsNavOpen(!isNavOpen);
@@ -14,7 +16,7 @@ const Navbar = () => {
     <Grid
       templateAreas={`"header header" "nav main" "nav footer"`}
       gridTemplateRows={['50px auto 30px']}
-      gridTemplateColumns={isNavOpen ? '300px 1fr' : '300px 1fr'}
+      gridTemplateColumns={isNavOpen ? '300px 1fr' : '300px 1fr'} // Alterado o tamanho do header quando o nav está fechado
       h='100vh'
       gap='0'
       color='black'
@@ -26,7 +28,7 @@ const Navbar = () => {
           <Text opacity={navDisplay ? '100%' : '0%'} fontFamily={"Fira Code"} fontSize={"25px"} color={"white"} mr={{ base: 5, md: 0 }}>
             gepetto
           </Text>
-          <Wrap display={useBreakpointValue({ base: 'none', md: isNavOpen ? 'flex' : 'none' })} opacity={isNavOpen ? 1 : 0} transition="opacity 0.3s ease-in-out">
+          <Wrap display={["none", "none", "flex"]} opacity={1} transition="opacity 0.3s ease-in-out">
             <WrapItem>
               <Avatar name="Might Guy" boxSize={10} src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1700&q=80" />
             </WrapItem>
@@ -37,9 +39,10 @@ const Navbar = () => {
         <NavItem icon={MoneyIcon} label="Pagamento" />
         <NavItem icon={MoneyIcon} label="Saldo" />
       </GridItem>
-      <GridItem pl='2' bg='white' area={'main'} h={'full'}  colSpan={isNavOpen ? 1 : 2}></GridItem>
+      <GridItem pl='2' bg='white' area={'main'} h={'full'} colSpan={isNavOpen ? 1 : 2}></GridItem>
       <GridItem bg='white' area={'footer'}></GridItem>
     </Grid>
   );
 };
+
 export default Navbar;
