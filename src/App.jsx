@@ -1,9 +1,9 @@
 import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Components/Home.jsx";
-import Login from "./Components/LoginPage/Login.jsx";
-import Register from "./Components/RegisterPage/Register.jsx";
+import Layout from "./Components/layout/Layout.jsx";
+import Login from "./Components/auth/Login.jsx";
+import Register from "./Components/auth/Register.jsx";
 import NotFoundPage from "./Components/NotFoundPage.jsx";
 
 const App = () => {
@@ -11,9 +11,10 @@ const App = () => {
     <ChakraProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Layout />} />
+          <Route path="/entrar" element={<Login />} />
+          <Route path="/registrar" element={<Register />} />
+          
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
