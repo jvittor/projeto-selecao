@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Image, Flex, Box, Grid, GridItem, Text, Wrap, WrapItem, Avatar, useBreakpointValue, HStack } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Text, Wrap, WrapItem, Avatar, useBreakpointValue, Divider } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import MoneyIcon from "../../assets/MoneyIcon.png";
+import PaymentIcon from "../../assets/PaymentIcon.png";
+import BalanceIcon from "../../assets/BalanceIcon.png";
+import LogoutIcon from "../../assets/LogoutIcon.png";
 import NavItem from "../NavItem";
 
 const Navbar = () => {
@@ -23,7 +25,7 @@ const Navbar = () => {
         <Flex justifyContent="space-between" alignItems="center" h="100%" w="100%" p={5}>
           <HamburgerIcon fontSize="24px" color="white" display={["flex", "flex", "none"]} onClick={toggleNav} />
           <Text opacity={navDisplay ? '100%' : '0%'} fontFamily={"Fira Code"} fontSize={"25px"} color={"white"} mr={{ base: 5, md: 0 }}>
-            gepetto
+            gepettopay
           </Text>
           <Wrap display={["none", "none", "flex"]} opacity={1} transition="opacity 0.3s ease-in-out">
             <WrapItem>
@@ -32,11 +34,15 @@ const Navbar = () => {
           </Wrap>
         </Flex>
       </GridItem>
-      <GridItem bg="#121212" area={'nav'} height={'full'} display={navDisplay} flexDirection="column" w={isNavOpen ? '300px' : '300px'}>
-        <NavItem icon={MoneyIcon} label="Pagamento" />
-        <NavItem icon={MoneyIcon} label="Saldo" />
+      <GridItem bg="#121212" area={'nav'} h={'full'} display={navDisplay} flexDirection="column" w={isNavOpen ? '300px' : '300px'}>
+        <NavItem icon={PaymentIcon} label="Pagamento" />
+        <NavItem icon={BalanceIcon} label="Saldo" />
+        <Divider opacity={0.1} mt={2} mb={2}/>
+        <NavItem icon={LogoutIcon} label="Sair da conta" />
       </GridItem>
-      <GridItem pl='2' bg='white' area={'main'} h={'full'} colSpan={isNavOpen ? 1 : 2}></GridItem>
+      <GridItem pl='2' bg='white' area={'main'} h={'full'} colSpan={isNavOpen ? 2 : 2}>
+        <Text mt={5} ml={{ base: 8, md: 5 }} fontSize="24px" fontFamily={"Roboto"} fontStyle={"regular"} letterSpacing={"0.15px"} opacity={isNavOpen ? '0%' : '100%'}>Pagamentos</Text>
+      </GridItem>
       <GridItem bg='white' area={'footer'}></GridItem>
     </Grid>
   );
