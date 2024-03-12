@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Image, Flex, Box, Grid, GridItem, Text, Wrap, WrapItem, Avatar, useBreakpointValue, HStack } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import MoneyIcon from "../assets/MoneyIcon.png";
-import NavItem from "./NavItem";
+import MoneyIcon from "../../assets/MoneyIcon.png";
+import NavItem from "../NavItem";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
