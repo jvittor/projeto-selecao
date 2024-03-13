@@ -20,14 +20,6 @@ import { ChevronLeftIcon, ChevronRightIcon, SearchIcon } from "@chakra-ui/icons"
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 
 const data = [
-  {
-    id: 1,
-    nome: "Nome do item 1",
-    descricao: "test",
-    valor: 100,
-
-  }
-
 ];
 
 const PaymentTable = () => {
@@ -65,7 +57,7 @@ const PaymentTable = () => {
     
     <Stack spacing={4} p={4}>
       
-      {filteredData.length === 0 ? (
+      {data.length === 0 ? (
       <Flex direction="column"
       align="center"
       justify="center"
