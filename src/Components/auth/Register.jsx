@@ -5,7 +5,7 @@ import Logo from '../../assets/logo.png';
 
 function RegisterForm() {
     const handleArrowClick = () => {
-        window.location.href = '/';
+        window.location.href = '/entrar';
         };
   return (
     <ChakraProvider>
