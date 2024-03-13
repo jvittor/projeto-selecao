@@ -20,10 +20,12 @@ import { ChevronLeftIcon, ChevronRightIcon, SearchIcon } from "@chakra-ui/icons"
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 
 const data = [
+  // test datA
+
 ];
 
 const PaymentTable = () => {
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(3);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
 
