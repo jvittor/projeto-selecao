@@ -14,13 +14,19 @@ import {
   Input,
   IconButton,
   Button,
-  Flex,
+  Flex
 } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon, SearchIcon } from "@chakra-ui/icons";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 
 const data = [
-  //data de teste
+  {
+    id: 1,
+    nome: "Nome do item 1",
+    descricao: "test",
+    valor: 100,
+
+  }
 
 ];
 
@@ -28,6 +34,7 @@ const PaymentTable = () => {
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
+
 
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
@@ -114,23 +121,25 @@ const PaymentTable = () => {
           </Tbody>
           <Tfoot>
             <Tr>
-              <Th colSpan={3} textAlign={["left", "right"]}>
-                <Stack direction={["column", "row"]} align="center" spacing={2}>
-                  <label htmlFor="rowsPerPage">Rows per page: </label>
-                  <Select
-                    id="rowsPerPage"
-                    value={rowsPerPage}
-                    onChange={handleChangeRowsPerPage}
-                    size="sm"
-                    w={[20, 32]}
-                    ml={['center', 2]}
-                    align={["flex-start", "center"]}
-                  >
-                    <option value={5}>5</option>
-                    <option value={10}>10</option>
-                    <option value={20}>20</option>
-                  </Select>
-                  <Text ml={[0, 2]}>
+              <Th colSpan={3} >
+                <Stack direction={["column", "row"]} spacing={2} align={["flex-start", "center"]}>
+                  <label htmlFor="rowsPerPage">
+                    <Text whiteSpace="nowrap">Rows per page: </Text>
+                  </label>
+                    <Select
+                      id="rowsPerPage"
+                      value={rowsPerPage}
+                      onChange={handleChangeRowsPerPage}
+                      size="sm"
+                      w={[20, 32]}
+                      ml={['center', 2]}
+                      align={["flex-start", "center"]}
+                    >
+                      <option value={5}>5</option>
+                      <option value={10}>10</option>
+                      <option value={20}>20</option>
+                    </Select>
+                  <Text ml={[0, 2]} whiteSpace="nowrap">
                     {`${startIndex + 1}-${endIndex} of ${filteredData.length} `}
                   </Text>
                   <Stack direction="row">
