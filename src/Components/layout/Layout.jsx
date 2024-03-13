@@ -11,6 +11,7 @@ const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const toggleNav = () => setIsNavOpen(!isNavOpen);
   const navDisplay = useBreakpointValue({ base: isNavOpen ? "flex" : "none", md: "flex" });
+  const displayValue = useBreakpointValue({ base: isNavOpen ? "none" : "block", md: "block" });
 
   return (
     <Grid
@@ -41,10 +42,10 @@ const Navbar = () => {
         <Divider opacity={0.1} mt={2} mb={2}/>
         <NavItem icon={LogoutIcon} label="Sair da conta" />
       </GridItem>
-      <GridItem pl='2' bg='white' area={'main'} h={'full'} colSpan={isNavOpen ? 2 : 2}>
-        <Text mt={5} ml={{ base: 8, md: 5 }} fontSize="24px" fontFamily={"Roboto"} fontStyle={"regular"} letterSpacing={"0.15px"} opacity={isNavOpen ? '0%' : '100%'}>Pagamentos</Text>
-        <Box display={isNavOpen ? 'none' : 'block'}>
-        <PaymentTable />
+      <GridItem pl='2' bg='white' area={'main'} h={'full'} colSpan={isNavOpen ? 2 : 2} display={displayValue}>
+        <Text mt={5} ml={{ base: 8, md: 5 }} fontSize="24px" fontFamily={"Roboto"} fontStyle={"regular"} letterSpacing={"0.15px"}>Pagamentos</Text>
+        <Box>
+          <PaymentTable />
         </Box>
       </GridItem>
       <GridItem bg='white' area={'footer'}></GridItem>

@@ -62,7 +62,8 @@ const PaymentTable = () => {
       <Flex direction="column"
       align="center"
       justify="center"
-      height="70vh">
+      height="70vh"
+      >
         <Button onClick={handleCreatePedido} colorScheme="teal" bg={"#1976D2"} _hover={{ bg: "#444D55" }}>
           Criar Pedido
         </Button>
