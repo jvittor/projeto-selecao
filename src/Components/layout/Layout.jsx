@@ -5,7 +5,7 @@ import PaymentIcon from "../../assets/PaymentIcon.png";
 import BalanceIcon from "../../assets/BalanceIcon.png";
 import LogoutIcon from "../../assets/LogoutIcon.png";
 import NavItem from "../NavItem";
-import PaymentTable from "../PaymentTable";
+import PaymentTable from "../payment/PaymentTable";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -41,6 +41,7 @@ const Navbar = () => {
         <NavItem icon={BalanceIcon} label="Saldo" />
         <Divider opacity={0.1} mt={2} mb={2}/>
         <NavItem icon={LogoutIcon} label="Sair da conta" />
+        <NavItem>Acessar Conta</NavItem>
       </GridItem>
       <GridItem pl='2' bg='white' area={'main'} h={'full'} colSpan={isNavOpen ? 2 : 2} display={displayValue}>
         <Text mt={5} ml={{ base: 8, md: 5 }} fontSize="24px" fontFamily={"Roboto"} fontStyle={"regular"} letterSpacing={"0.15px"}>Pagamentos</Text>
