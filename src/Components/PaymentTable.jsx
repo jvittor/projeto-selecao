@@ -16,7 +16,7 @@ import {
   Button,
   Flex
 } from "@chakra-ui/react";
-import { ChevronLeftIcon, ChevronRightIcon, SearchIcon } from "@chakra-ui/icons";
+import { ChevronLeftIcon, ChevronRightIcon} from "@chakra-ui/icons";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 
 const data = [
