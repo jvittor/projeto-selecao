@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Flex, Grid, GridItem, Text, Wrap, WrapItem, Avatar, useBreakpointValue, Divider } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Text, Wrap, WrapItem, Avatar, useBreakpointValue, Divider, Box } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import PaymentIcon from "../../assets/PaymentIcon.png";
 import BalanceIcon from "../../assets/BalanceIcon.png";
 import LogoutIcon from "../../assets/LogoutIcon.png";
 import NavItem from "../NavItem";
+import PaymentTable from "../PaymentTable";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -21,10 +22,10 @@ const Navbar = () => {
       color='black'
       fontWeight='bold'
     >
-      <GridItem pl='4' bg='#424242' area={'header'}>
+      <GridItem pl='4' bg='#424242' area={'header'} pr={0}>
         <Flex justifyContent="space-between" alignItems="center" h="100%" w="100%" p={5}>
           <HamburgerIcon fontSize="24px" color="white" display={["flex", "flex", "none"]} onClick={toggleNav} />
-          <Text opacity={navDisplay ? '100%' : '0%'} fontFamily={"Fira Code"} fontSize={"25px"} color={"white"} mr={{ base: 5, md: 0 }}>
+          <Text opacity={navDisplay ? '100%' : '0%'} fontFamily={"Fira Code"} fontSize={"25px"} color={"white"} mr={{ base: 0, md: 0 }}>
             gepettopay
           </Text>
           <Wrap display={["none", "none", "flex"]} opacity={1} transition="opacity 0.3s ease-in-out">
@@ -42,6 +43,9 @@ const Navbar = () => {
       </GridItem>
       <GridItem pl='2' bg='white' area={'main'} h={'full'} colSpan={isNavOpen ? 2 : 2}>
         <Text mt={5} ml={{ base: 8, md: 5 }} fontSize="24px" fontFamily={"Roboto"} fontStyle={"regular"} letterSpacing={"0.15px"} opacity={isNavOpen ? '0%' : '100%'}>Pagamentos</Text>
+        <Box display={isNavOpen ? 'none' : 'block'}>
+        <PaymentTable />
+        </Box>
       </GridItem>
       <GridItem bg='white' area={'footer'}></GridItem>
     </Grid>
