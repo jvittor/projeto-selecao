@@ -24,7 +24,7 @@ const data = [
 
 ];
 
-const MyTable = () => {
+const PaymentTable = () => {
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
@@ -157,4 +157,4 @@ const MyTable = () => {
   );
 };
 
-export default MyTable;
+export default PaymentTable;
