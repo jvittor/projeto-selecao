@@ -14,29 +14,41 @@ datasource db {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
   password String
+  payments Payment[]
+  balances Balance[]
+
+  @@map("users")
 }
 
 model Payment {
-  id          String @id @default(uuid())
+  id          Int   @id @default(autoincrement())
   name        String
   description String
   value       Int
+  balance     Balance @relation(fields: [balanceId], references: [id])
+  balanceId   Int
+  user        User     @relation(fields: [userId], references: [id])
+  userId      Int
 
-  balance   Balance @relation(fields: [balanceId], references: [id])
-  balanceId String
+  @@map("payments")
 }
 
 model Balance {
-  id             String    @id @default(uuid())
+  id             Int   @id @default(autoincrement())
   name           String
   description    String
   initialValue   Int
   remainingValue Int
+  user           User     @relation(fields: [userId], references: [id])
+  userId         Int
   Payment        Payment[]
+
+  @@map("balances")
 }
+
 
 
 
