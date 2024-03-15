@@ -20,6 +20,25 @@ model User {
   password String
 }
 
+model Payment {
+  id          String @id @default(uuid())
+  name        String
+  description String
+  value       Int
+
+  balance   Balance @relation(fields: [balanceId], references: [id])
+  balanceId String
+}
+
+model Balance {
+  id             String    @id @default(uuid())
+  name           String
+  description    String
+  initialValue   Int
+  remainingValue Int
+  Payment        Payment[]
+}
+
 
 
 
