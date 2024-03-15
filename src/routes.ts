@@ -1,15 +1,15 @@
 import {Router} from 'express'
-import { UserController } from './controller/user.controller'
-import { AuthController } from './controller/auth/auth.controller';
+import { UserRegisterController } from './controller/user/user-register.controller';
+import { UserLoginController } from './controller/user/user-login.controller';
 import { AuthMiddleware } from './middlewares/auth';
 
 
-const userController = new UserController();
-const authController = new AuthController();
+const registerController = new UserRegisterController();
+const loginController = new UserLoginController();
 
 
 
 export const router = Router();
 
-router.post("/register", userController.store);
-router.post("/login", authController.authenticate)
+router.post("/register", registerController.store);
+router.post("/login", loginController.authenticate)

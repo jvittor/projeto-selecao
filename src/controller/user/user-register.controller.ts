@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { prisma } from "../utils/prisma";
+import { prisma } from "../../utils/prisma";
 import bcrypt from "bcryptjs";
 
 
-export class UserController {
+export class UserRegisterController {
     async store(req: Request, res: Response) {
         const {email, password} = req.body;
         

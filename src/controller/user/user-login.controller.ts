@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
-export class AuthController {
+export class UserLoginController {
     async authenticate(req: Request, res: Response) {
         const {email, password} = req.body;
         
