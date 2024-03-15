@@ -12,4 +12,4 @@ const authController = new AuthController();
 export const router = Router();
 
 router.post("/register", userController.store);
-router.post("/login", AuthMiddleware, authController.authenticate)
+router.post("/login", authController.authenticate)
