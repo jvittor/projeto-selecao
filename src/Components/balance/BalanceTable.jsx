@@ -61,7 +61,7 @@ const BalanceTable = () => {
     <Grid>
     <Stack spacing={4} p={4}>
 
-    <Text mt={5} ml={{ base: 3, md: 5 }} fontSize="24px" fontFamily={"Roboto"} fontStyle={"regular"} letterSpacing={"0.15px"}>Saldos</Text>
+    <Text mt={5} ml={{ base: 3, md: 5 }} fontSize="24px" fontFamily={"arial"} fontStyle={"regular"} letterSpacing={"0.15px"}>Saldos</Text>
   
       
       {data.length === 0 ? (
