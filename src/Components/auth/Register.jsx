@@ -39,14 +39,14 @@ function RegisterForm() {
           <CardBody>
             <Grid templateColumns="repeat(2, 1fr)" gap={4}>
               <GridItem colSpan={2}>
-                <Input type="text" placeholder="Nome" size="md" variant="filled" />
+                <Input type="text" placeholder="email" size="md" variant="filled" />
               </GridItem>
               <GridItem colSpan={2}>
-                <Input type="password" placeholder="Senha" size="md" variant="filled" />
+                <Input type="password" placeholder="senha" size="md" variant="filled" />
               </GridItem>
               <GridItem colSpan={2}>
                 <Button bg={"black"} size="md" width="100%" _hover={{ bg: "#444D55" }}>
-                  <Text color={"white"}>Entrar</Text>
+                  <Text color={"white"}>Registrar</Text>
                 </Button>
               </GridItem>
             </Grid>
