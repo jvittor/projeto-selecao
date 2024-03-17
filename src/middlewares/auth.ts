@@ -23,7 +23,7 @@ export function AuthMiddleware(
     const [, token]= authorization.split(" ");
 
     try {
-        const decoded = jwt.verify(token, process.env.SECRET_KEY as jwt.Secret)
+        const decoded = jwt.verify(token, "my_secret");
         const { id } = decoded as TokenPayload;
 
         req.userId = id;
