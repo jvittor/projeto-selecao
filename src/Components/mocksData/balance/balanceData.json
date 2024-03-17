@@ -1,0 +1,23 @@
+{
+    "balance" : [
+      {
+        "balanceId": "1",
+        "name": "Saldo Principal",
+        "valueRemaining": 1000,
+        "valueInitial": 1000
+
+      },
+      {
+        "balanceId": "2",
+        "name": "Saldo Secundário",
+        "valueRemaining": 2000,
+        "valueInitial": 1000
+      },
+      {
+        "balanceId": "3",
+        "name": "Saldo Extra",
+        "valueRemaining": 500,
+        "valueInitial": 2000
+      }
+    ]
+  }  
